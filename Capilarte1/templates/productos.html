@@ -1,0 +1,188 @@
+{% extends "base_generic.html" %} 
+{% block title %} 
+<title>Tripack | Bótox | Spray</title> 
+{% endblock %}
+{% block content %}
+<div class="subtitulos">
+  <h2>TODOS LOS PRODUCTOS</h2>
+</div>
+<hr />
+<a class="btn btn-primary" href="{% url 'producto_create' %}" style="float: right; font-size: 14px;">Agregar producto</a>
+<div class="compras col-lg-3" id="compras1">
+  Tus productos: <label id="compras">0</label>
+</div>
+<div class="album py-5 bg-light">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Cannabis.jpg' %}"
+          alt="tripack_cannabis"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Cannabis</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Coco.jpg' %}"
+          alt="tripack_coco"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Coco</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Cola_caballo.jpg' %}"
+          alt="tripack_colacaballo"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Cola de Caballo</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'img/Tri_Jalea.jpg' %}" alt="tripack_jalea" />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Jalea Real</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'img/Tri_Maqui.jpg' %}" alt="tripack_maqui" />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Maqui y Acai</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Menta_chocolate.jpg' %}"
+          alt="tripack_mentachocolate"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Menta Chocolate</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'img/Tri_Ortiga.jpg' %}" alt="tripack_ortiga" />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Ortiga Romero</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Palta.jpg' %}"
+          alt="tripack_paltaoliva"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Palta Oliva</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'img/Tri_Argan.jpg' %}" alt="tripack_argan" />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Argán</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Botox_FenixHair.jpg' %}"
+          alt="tripack_ortiga"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Botox Fenix Hair</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'img/Botox_Jalea.jpg' %}" alt="botox_jalea" />
+        <div class="card-body">
+          <a class="card-text" href="#">Bótox Jalea Real </a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'img/Spray_termoprotector.jpg' %}" alt="spray" />
+        <div class="card-body">
+          <a class="card-text" href="#">Spray Termoprotector</a> <br />
+          <span class="txtReal text-muted">$5.000</span><br />
+          <span class="text-primary">$2.500</span><br /><br />
+          <button type="button" class="btn btn-primary" id="botoncomprar">
+            Comprar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

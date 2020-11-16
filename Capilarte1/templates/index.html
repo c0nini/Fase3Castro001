@@ -1,0 +1,141 @@
+{% extends "base_generic.html" %}
+{% block title %} 
+<title>Capilarte</title> 
+{% endblock %}
+{% block banner %}
+<div>
+  <script src="https://cdn.onlymega.com/ckgznzjxj000a35pd00cx64cw/embed.js?responsive=1&bnTag=" async></script>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="subtitulos">
+  <h2>PRODUCTOS DESTACADOS</h2>
+</div>
+<hr />
+<div class="compras col-lg-3" id="compras1">
+  Tus productos: <label id="compras">0</label>
+</div>
+<div class="album py-5 bg-light">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Cannabis.jpg' %}"
+          alt="tripack_cannabis"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Cannabis</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Coco.jpg' %}"
+          alt="tripack_coco"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Coco</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Cola_caballo.jpg' %}"
+          alt="tripack_colacaballo"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Cola de Caballo</a>
+          <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mb-3 shadow-sm">
+        {% load static %}
+        <img
+          class="img-fluid"
+          src="{% static 'img/Tri_Jalea.jpg' %}"
+          alt="tripack_jalea"
+        />
+        <div class="card-body">
+          <a class="card-text" href="#">Tripack Jalea Real</a> <br />
+          <span class="txtReal text-muted">$10.000</span><br />
+          <span class="text-primary">$5.000</span><br /><br />
+          <button type="button" class="btn btn-primary comprar">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+{% block carousel %}
+<div id="carousel1" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel1" data-slide-to="1"></li>
+    <li data-target="#carousel1" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {% load static %}
+      <img
+        src="{% static 'img/banner3.png' %}"
+        class="d-block w-100"
+        alt="imgcar1"
+      />
+    </div>
+    <div class="carousel-item">
+      {% load static %}
+      <img
+        src="{% static 'img/banner1.png' %}"
+        class="d-block w-100"
+        alt="imgcar2"
+      />
+    </div>
+    <div class="carousel-item">
+      {% load static %}
+      <img
+        src="{% static 'img/banner2.png' %}"
+        class="d-block w-100"
+        alt="imgcar3"
+      />
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carousel1"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carousel1"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a>
+</div>
+<br /><br /><br />
+{% endblock %}
+

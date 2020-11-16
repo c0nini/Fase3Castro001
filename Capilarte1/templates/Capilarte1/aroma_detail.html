@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+{% block title %} <title>Aroma</title> {% endblock %}
+{% block content %}
+{% load static %}
+<div class="jumbotron jumbotron-fluid" style="background-color: rgb(255, 255, 255);">
+    <div class="container">
+        <h1 class="display" style="color: rgb(124, 4, 74);">{{aroma.nombre}}</h1>
+        <hr class="my-6"><br>
+        <p>{{aroma.descripcion}}</p>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <a class="btn btn-primary btn-lg" href="{% url 'aroma_update' pk=aroma.pk %}">Editar </a>
+                <a class="btn btn-primary btn-lg" href="{% url 'aroma_delete' pk=aroma.pk %}">Eliminar</a>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+{% endblock %}

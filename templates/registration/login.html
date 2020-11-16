@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <br><br>
+      <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="text-center">
+          <button class="btn btn-primary" type="submit">Ingresar</button>
+        </div>
+        </form><br>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<script>
+  $(document).ready( function(){
+    $("#id_username").addClass("form-control");
+
+    $("#id_password").addClass("form-control");
+  })
+</script>
+{% endblock %}

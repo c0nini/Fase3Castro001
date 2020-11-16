@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%block title %} 
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/brands.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/solid.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/brands.min.js' %}"></script>
+    <script src="{% static 'js/solid.min.js' %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script type="text/javascript">
+      (function () {
+        var options = {
+          whatsapp: "+56934231339",
+          instagram: "capilarte",
+          call_to_action: "Síguenos o escríbenos",
+          button_color: "#B30269",
+          position: "left",
+          order: "instagram,whatsapp",
+        };
+        var proto = document.location.protocol,
+          host = "getbutton.io",
+          url = proto + "//static." + host;
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "static/js/init.js";
+        s.onload = function () {
+          WhWidgetSendButton.init(host, proto, options);
+        };
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      })();
+    </script> 
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#opciones"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'index' %}">
+          {% load static %}
+          <img
+            src="{% static 'img/logo.png' %}"
+            width="150"
+            height="80"
+            alt="logo"
+          />
+        </a>
+
+        <div class="collapse navbar-collapse" id="opciones">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}" target="_blank"
+                >Inicio<span class="sr-only"></span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Catálogo
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'productos' %}" target="_blank">Mostrar todos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'aromas' %}" target="_blank">Aromas</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"
+                  >Shampoo, Bálsamo y Cremas Capilares
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Bótox Capilar</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Spray Termoprotector</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}" target="_blank"
+                >Contáctanos
+              </a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Buscar un producto"
+              aria-label="Search"
+            />
+            <button class="btn btn-success my-2 my-sm-0" type="submit">
+              Buscar
+            </button>
+          </form>
+        </div>
+        {% if user.is_authenticated  %}
+            <a class="btn btn-success ml-3" href="{% url 'logout' %}"> Cerrar sesión </a>  
+          {% else %}
+            <a class="btn btn-success ml-3" href="{% url 'login' %}"> Ingresar </a>  
+          {% endif %}
+        <a href="{% url 'productos' %}"></a>
+      </nav>
+      {% block banner %}
+      
+      {% endblock %}
+    </header>
+    <br /><br />
+    <div class="container">
+      <section>
+      {% block content %} 
+      {% endblock %}
+      </section>
+
+      {% block carousel %} 
+      {% endblock %}
+      
+      
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Capilarte</h6>
+            <p>
+              Somos un pequeño emprendimiento familiar, nos dedicamos a vender
+              productos capilares sin químicos, sodio, parabenos ni sulfatos. Lo
+              mejor para tu cabello, elaborado con materias primas 100%
+              naturales.
+            </p>
+          </div>
+
+          <hr class="hr" />
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
+            <p>
+              <a class="txtf" href="{% url 'productos' %}" target="_blank">Mostrar todos</a>
+            </p>
+            <p>
+              <a class="txtf" href="#!">Bótox</a>
+            </p>
+            <p>
+              <a class="txtf" href="#!">Shampoo, bálsamo y cremas capilares</a>
+            </p>
+            <p>
+              <a class="txtf" href="#!">Spray termoprotector</a>
+            </p>
+          </div>
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Información</h6>
+            <p><i class="fas fa-home mr-3"></i> Maipú, Santiago de Chile</p>
+            <p><i class="fas fa-envelope mr-3"></i>contacto@capilarte.cl</p>
+            <p><i class="fas fa-phone mr-3"></i> +56 9 3423 1339</p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+          <div class="col-md-7 col-lg-8">
+            <p class="textfooter">© 2020 Todos los Derechos Reservados</p>
+          </div>
+
+          <div class="col-md-5 col-lg-4 ml-lg-0">
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a
+                    class="btn-floating btn-sm rgba-white-slight mx-1"
+                    href="https://www.facebook.com/Capilartecl-104037778106511"
+                    target="_blank"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="btn-floating btn-sm rgba-white-slight mx-1"
+                    href="https://twitter.com/capilarte1"
+                    target="_blank"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    class="btn-floating btn-sm rgba-white-slight mx-1"
+                    href="https://www.instagram.com/capilarte/"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

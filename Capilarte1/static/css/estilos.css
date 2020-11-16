@@ -1,0 +1,83 @@
+.txtReal {
+  text-decoration: line-through;
+}
+
+.compras {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  color: rgb(136, 15, 86);
+  border: solid;
+  border-width: 2px;
+  border-color: rgba(10, 10, 10, 0.377);
+}
+
+#compras1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  color: rgb(136, 15, 86);
+  
+}
+
+.card:hover {
+  background-color: rgba(248, 128, 212, 0.11);
+}
+.card-body {
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-text {
+  color: rgb(196, 25, 124);
+}
+
+.card-text:hover {
+  color: rgb(136, 15, 86);
+}
+
+.subtitulos {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(179, 2, 105);
+  text-align: center;
+  border: dashed;
+  border-width: 2px;
+  border-color: rgba(10, 10, 10, 0.377);
+}
+
+.textfooter {
+  text-align: center;
+  color:rgb(156, 3, 92);
+}
+
+.footer {
+  background-color: rgba(255, 242, 249, 0.568);
+}
+
+.text-uppercase {
+  color: rgb(179, 2, 105);
+}
+
+.txtf {
+  color: rgb(179, 2, 105);
+}
+
+.txtf:hover {
+  color: rgb(160, 4, 95);
+}
+
+.btn-primary {
+  color: rgb(0, 0, 0);
+  background-color: #fcc9f9;
+  border-color: #a0167d;
+}
+.btn-primary:hover {
+  color: rgb(0, 0, 0);
+  background-color: #ec96d7a4;
+  border-color: #3f0130;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+  color: #fff;
+  background-color: #ec96d7a4;
+  border-color: #965485a4;
+  box-shadow: 0 0 0 0.1rem #7c1763a4;
+}

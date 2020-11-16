@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{% block title %} <title>Producto</title> {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="jumbotron jumbotron-fluid" style="background-color: rgb(255, 255, 255);">
+  <div class="container">
+      <h1 class="display" style="color: rgb(124, 4, 74);">{{producto.tipo_producto}} {{producto.aroma.nombre}}</h1>
+      
+      {% if producto.aroma %}
+      <p class="texto">{{producto.descripcion_prod}} </p>
+      <p class="texto">{{producto.aroma.descripcion}}</p>
+      <p class="texto">Precio: {{producto.precio}} </p>
+
+      <a href="{% url 'aroma_detail' producto.aroma.pk %}" class="btn btn-primary">
+        Ver más
+      </a>
+    {% else %}
+      <p class="texto">No hay aromas</p>
+
+    {% endif %}
+      <hr class="my-6"><br>
+      <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+              <a class="btn btn-primary btn-lg" href="{% url 'producto_update' pk=producto.pk %}">Editar </a>
+              <a class="btn btn-primary btn-lg" href="{% url 'producto_delete' pk=producto.pk %}">Eliminar</a>
+          </div>
+      </div>
+      <div class="col-sm-4"></div>
+  </div>
+</div>
+{% endblock %}

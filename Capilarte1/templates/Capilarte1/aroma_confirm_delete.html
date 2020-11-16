@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %} 
+{% block title %} <title>Eliminar</title> {%endblock %} 
+{% block content %} {% load static %}
+
+<div class="jumbotron jumbotron-fluid" style="background-color: rgb(255, 255, 255)">
+    <div class="container">
+        <h1 class="display" style="color: rgb(124, 4, 74);">¿Estás seguro que quieres eliminar este aroma?</h1>
+        <hr class="my-6" />
+        <h2 class="display" style="color: rgb(124, 4, 74);">{{ aroma.nombre }}</h2>
+        <p>{{ aroma.descripcion }}</p>
+        <br />
+        <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+            <a href="{% url 'aroma_detail' aroma.pk %}" class="btn btn-primary btn-lg" >Volver</a>
+            <button type="submit" class="btn btn-primary btn-lg">Eliminar</button>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
