@@ -4,9 +4,11 @@
 {% block content %}
 <div class="masthead container d-flex align-items-center flex-column">
   <h2 class="text-center text-uppercase">Aromas</h2>
-  <div style="width: 60%; height: 50px;"><a class="btn btn-primary" href="{% url 'aroma_create' %}" style="float: right; font-size: 14px;">Agregar aroma 
-                <!-- <span class="glyphicon glyphicon-plus"></span> -->
-            </a>
+  <div style="width: 60%; height: 50px;">
+    {% if user.is_authenticated  %}
+      <a class="btn btn-primary" href="{% url 'aroma_create' %}" 
+      style="float: right; font-size: 14px;">Agregar aroma</a>
+    {% endif %}
   </div>
 </div>
 {% if aroma_list %}
