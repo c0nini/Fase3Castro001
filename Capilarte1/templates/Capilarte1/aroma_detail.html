@@ -10,8 +10,12 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <a class="btn btn-primary btn-lg" href="{% url 'aroma_update' pk=aroma.pk %}">Editar </a>
-                <a class="btn btn-primary btn-lg" href="{% url 'aroma_delete' pk=aroma.pk %}">Eliminar</a>
+                {% if perms.polls %}
+                    <a class="btn btn-primary btn-lg" href="{% url 'aroma_update' pk=aroma.pk %}">Editar </a>
+                    <a class="btn btn-primary btn-lg" href="{% url 'aroma_delete' pk=aroma.pk %}">Eliminar</a>
+                {% else %}
+                    <a class="btn btn-primary btn-lg" href="{% url 'aromas' %}">Volver</a>
+                {% endif %}
             </div>
         </div>
         <div class="col-sm-4"></div>

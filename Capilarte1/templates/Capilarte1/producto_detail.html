@@ -23,8 +23,12 @@
       <div class="row">
           <div class="col-sm-4"></div>
           <div class="col-sm-4">
+            {% if perms.polls %}
               <a class="btn btn-primary btn-lg" href="{% url 'producto_update' pk=producto.pk %}">Editar </a>
               <a class="btn btn-primary btn-lg" href="{% url 'producto_delete' pk=producto.pk %}">Eliminar</a>
+            {% else %}
+              <a class="btn btn-primary btn-lg" href="{% url 'productos' %}">Volver</a>
+            {% endif %}
           </div>
       </div>
       <div class="col-sm-4"></div>
