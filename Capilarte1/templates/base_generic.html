@@ -19,10 +19,14 @@
     <script src="{% static 'js/all.min.js' %}"></script>
     <script src="{% static 'js/brands.min.js' %}"></script>
     <script src="{% static 'js/solid.min.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/productos.js' %}"></script>
+    <script src="{% static 'js/formulario.js' %}"></script>
     <script type="text/javascript">
-      (function () {
+    $(document).ready( function(){
+      function renderButton() {
         var options = {
           whatsapp: "+56934231339",
           instagram: "capilarte",
@@ -34,16 +38,21 @@
         var proto = document.location.protocol,
           host = "getbutton.io",
           url = proto + "//static." + host;
-        var s = document.createElement("script");
+ /*        var s = document.createElement("script");
         s.type = "text/javascript";
         s.async = true;
         s.src = "static/js/init.js";
-        s.onload = function () {
-          WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName("script")[0];
-        x.parentNode.insertBefore(s, x);
-      })();
+        console.log(s) */
+        WhWidgetSendButton.init(host, proto, options);
+/*         s.onload = function () {
+          console.log(host, proto, options)
+          
+        }; */
+ /*        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x); */
+      }
+      renderButton()
+    });
     </script> 
   </head>
   <body>
@@ -70,7 +79,7 @@
         <div class="collapse navbar-collapse" id="opciones">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}" target="_blank"
+              <a class="nav-link" href="{% url 'index' %}" 
                 >Inicio<span class="sr-only"></span>
               </a>
             </li>
@@ -86,9 +95,9 @@
                 >Catálogo
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'productos' %}" target="_blank">Mostrar todos</a>
+                <a class="dropdown-item" href="{% url 'productos' %}">Mostrar todos</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'aromas' %}" target="_blank">Aromas</a>
+                <a class="dropdown-item" href="{% url 'aromas' %}" >Aromas</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#"
                   >Shampoo, Bálsamo y Cremas Capilares
@@ -103,7 +112,7 @@
               <a class="nav-link" href="#">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contacto' %}" target="_blank"
+              <a class="nav-link" href="{% url 'contacto' %}" 
                 >Contáctanos
               </a>
             </li>
@@ -156,7 +165,7 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
             <p>
-              <a class="txtf" href="{% url 'productos' %}" target="_blank">Mostrar todos</a>
+              <a class="txtf" href="{% url 'productos' %}">Mostrar todos</a>
             </p>
             <p>
               <a class="txtf" href="#!">Bótox</a>
